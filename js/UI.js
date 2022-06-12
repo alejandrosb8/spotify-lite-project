@@ -1,4 +1,4 @@
-function createMusicTab(name, author, thumbnail) {
+function createMusicTab(id, name, author, thumbnail) {
 	const tab = document.createElement('div');
 	tab.classList.add('main__tab');
 
@@ -16,6 +16,8 @@ function createMusicTab(name, author, thumbnail) {
 
 	flexDiv.append(songName, songAuthor);
 	tab.append(songThumbnail, flexDiv);
+
+	tab.dataset.id = id;
 
 	return tab;
 }
