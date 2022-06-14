@@ -8,16 +8,64 @@
 		<link rel="stylesheet" href="./styles.css" />
 	</head>
 	<body>
-		<header>
-			<div>
-				<input placeholder="Type some music..." type="text" />
-				<span></span>
-			</div>
-		</header>
 		<main>
 			<section class="main__songs">
 				<h2>Songs</h2>
 				<ul id="songList"></ul>
+				<audio src="" id="audio"></audio>
+			</section>
+			<div class="blacker"></div>
+			<section class="main__player">
+				<div class="player__header">
+					<div class="player__title">
+						<img src="" alt="" id="thumb" />
+						<div>
+							<p class="player__songName"></p>
+							<p class="player__songAuthor"></p>
+						</div>
+					</div>
+					<div>
+						<p class="timeText"></p>
+					</div>
+				</div>
+				<input type="range" id="progressBar" max="400" value="0" />
+				<div class="player__main">
+					<button id="volume"></button>
+					<div>
+						<button id="like">
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="currentColor"
+									d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"
+								/>
+							</svg>
+						</button>
+						<button id="prev"></button>
+						<button id="play" class="btnPlay"></button>
+						<button id="next"></button>
+						<button id="repeat">
+							<svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+								<path
+									fill="currentColor"
+									d="M17,17H7V14L3,18L7,22V19H19V13H17M7,7H17V10L21,6L17,2V5H5V11H7V7Z"
+								/>
+							</svg>
+						</button>
+					</div>
+					<button id="more"></button>
+				</div>
+				<div class="player__volume-popup">
+					<p>Volume</p>
+					<input type="range" id="volumeBar" max="100" value="100" />
+				</div>
+				<section class="player__comments">
+					<h2>Comments</h2>
+					<div class="addCommentContainer">
+						<input type="text" placeholder="Add a comment" id="addComment" />
+						<button id="addCommentBtn">Send comment</button>
+					</div>
+					<ul id="commentList"></ul>
+				</section>
 			</section>
 		</main>
 		<script src="./main.js" type="module"></script>

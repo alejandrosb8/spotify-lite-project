@@ -1,4 +1,4 @@
-function createMusicTab(id, name, author, thumbnail) {
+function createMusicTab(id, name, author, thumbnail, index) {
 	const tab = document.createElement('div');
 	tab.classList.add('main__tab');
 
@@ -18,8 +18,27 @@ function createMusicTab(id, name, author, thumbnail) {
 	tab.append(songThumbnail, flexDiv);
 
 	tab.dataset.id = id;
+	tab.dataset.order = index;
 
 	return tab;
 }
+function createComment(comment) {
+	const commentElement = document.createElement('li');
+	commentElement.classList.add('comment');
+	const textContainer = document.createElement('div');
+	const userImg = document.createElement('img');
+	userImg.src = '../resources/icons/account-circle.png';
+	const userName = document.createElement('p');
+	userName.classList.add('userName');
+	userName.textContent = 'User';
+	const userComment = document.createElement('p');
+	userComment.classList.add('userComment');
+	userComment.textContent = comment;
 
-export { createMusicTab };
+	textContainer.append(userName, userComment);
+	commentElement.append(userImg, textContainer);
+
+	return commentElement;
+}
+
+export { createMusicTab, createComment };
