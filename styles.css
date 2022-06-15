@@ -137,7 +137,6 @@ main {
 }
 .main__player {
 	height: auto;
-	max-height: 145px;
 	display: flex;
 	flex-direction: column;
 	background-color: #212121;

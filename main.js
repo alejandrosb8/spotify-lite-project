@@ -39,6 +39,7 @@ function addEvents() {
 	const addCommentBtn = document.getElementById('addCommentBtn');
 	const blacker = document.getElementsByClassName('blacker')[0];
 	const timeText = document.getElementsByClassName('timeText')[0];
+
 	progressBar.value = 0;
 
 	songList.addEventListener('click', (e) => {
@@ -75,6 +76,13 @@ function addEvents() {
 
 		let minutesMax = Math.floor(audio.duration / 60);
 		let secondsMax = Math.floor(audio.duration - minutesMax * 60);
+
+		if (!minutesMax) {
+			minutesMax = 0;
+		}
+		if (!secondsMax) {
+			secondsMax = 0;
+		}
 
 		if (secondsMax.toString().length <= 1) {
 			newSecondMax = '0' + secondsMax.toString();
@@ -247,6 +255,11 @@ function playAudio(tab) {
 				song.comments.forEach((comment) => {
 					commentList.appendChild(createComment(comment));
 				});
+
+				const mainSection = document.getElementsByClassName('main__songs')[0];
+				const playerSection = document.getElementsByClassName('main__player')[0];
+
+				mainSection.style.marginBottom = getComputedStyle(playerSection).height;
 
 				return;
 			}

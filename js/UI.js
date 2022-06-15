@@ -26,8 +26,8 @@ function createComment(comment) {
 	const commentElement = document.createElement('li');
 	commentElement.classList.add('comment');
 	const textContainer = document.createElement('div');
-	const userImg = document.createElement('img');
-	userImg.src = '../resources/icons/account-circle.png';
+	/*const userImg = document.createElement('img');
+	userImg.src = '../resources/icons/account-circle.png';*/
 	const userName = document.createElement('p');
 	userName.classList.add('userName');
 	userName.textContent = 'User';
@@ -36,7 +36,7 @@ function createComment(comment) {
 	userComment.textContent = comment;
 
 	textContainer.append(userName, userComment);
-	commentElement.append(userImg, textContainer);
+	commentElement.append(textContainer);
 
 	return commentElement;
 }
